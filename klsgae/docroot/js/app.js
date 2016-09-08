@@ -29,6 +29,22 @@ var app = {},
     },
 
 
+    modifyContentLinks = function () {
+        var i, nodes, node, href, html;
+        nodes = jt.byId("contentdiv").getElementsByTagName("a");
+        for(i = 0; nodes && i < nodes.length; i += 1) {
+            node = nodes[i];
+            href = node.href;
+            if(href && href.indexOf("http") === 0 &&
+                       href.indexOf("klsuyemoto.net") < 0 &&
+                       href.indexOf(":10080") < 0) {
+                html = ["a", {href: href,
+                              onclick: jt.fs("window.open('" + href + "')")},
+                        node.innerHTML];
+                node.outerHTML = jt.tac2html(html); } }
+    },
+
+
     displayDocContent = function (url, html) {
         var idx;
         if(!html || !html.trim()) {
@@ -39,6 +55,7 @@ var app = {},
             idx = html.indexOf(">");
             html = html.slice(idx + 1, html.indexOf("</body")); }
         jt.out("contentdiv", html);
+        modifyContentLinks();
     },
 
 
@@ -50,7 +67,7 @@ var app = {},
             fname = pes[pes.length - 1];
             if(src === "html") {
                 node.href = "index.html?sd=html&fn=" + fname; }
-            else if(src == "pdf") {
+            else if(src === "pdf") {
                 html = ["a", {href: "pdf/" + fname,
                               onclick: jt.fs("window.open('pdf/" + 
                                              fname + "')")},
