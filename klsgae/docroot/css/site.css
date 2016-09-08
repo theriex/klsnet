@@ -49,8 +49,8 @@ h2 { font-size:large; font-weight:bold; }
   }
 #contentdiv { height:100%; min-height:100vh; max-width:790px; }
 
-#menudiv { float:left; margin:-10px 0px 0px -80px; min-width:60px;
-  position:relative; z-index:1000;
+#menudiv { float:left; position:fixed; top:0;
+  margin:0px 0px 0px -80px; min-width:60px; z-index:1000;
   border-top-right-radius:10px;
   border-bottom-right-radius:10px;
   background:url('../img/menuback.png'); }
@@ -61,10 +61,11 @@ h2 { font-size:large; font-weight:bold; }
   background:url('../img/menuback.png');
  }
 #menucontentdiv ul { list-style:none; padding:0; margin:0; }
-#menucontentdiv ul li { font-weight:bold; font-size:x-large; 
+#menucontentdiv ul li { font-weight:bold; font-size:x-small; 
   padding:10px 3px 0px 5px; font-style:italic; }
 #menucontentdiv ul li ul li { font-size:medium; font-weight:bold; 
-  padding:10px 4px 12px 4px; font-style:normal; }
+  padding:2px 4px 15px 4px; font-style:normal; }
+.currentContentLinkSpan { color:#3399CC; }
 
 /*
  ************************************************************
@@ -75,7 +76,7 @@ h2 { font-size:large; font-weight:bold; }
 .leftpic { float:left; margin-right:10px; }
 
 .titlediv { text-align:center; color:#332e49; font-size:x-large; 
-  font-weight:bold; padding:0px 0px 10px 0px; }
+  font-weight:bold; padding:0px 0px 10px 20px; }
 
 #namediv { padding:0px 0px 0px 50px; font-size:xx-large; }
 

@@ -15,6 +15,7 @@ var app = {},
     var addr = 
         ["k", "a", "r", "e", "n", ".", 
          "s", "u", "y", "e", "m", "o", "t", "o"],
+        displayContent = "",
 
 
     ////////////////////////////////////////
@@ -55,6 +56,9 @@ var app = {},
                                              fname + "')")},
                         node.innerHTML];
                 node.outerHTML = jt.tac2html(html); } }
+        if(link.indexOf(displayContent) > 0) {
+            html = ["span", {cla: "currentContentLinkSpan"}, node.innerHTML];
+            node.innerHTML = jt.tac2html(html); }
     },
 
 
@@ -134,13 +138,13 @@ var app = {},
 
 
     app.init = function () {
-        var pobj, content;
+        var pobj;
         jtminjsDecorateWithUtilities(jt);
         pobj = jt.paramsToObj(window.location.search, {}, "String");
-        content = "html/intro.html";
+        displayContent = "html/intro.html";
         if(pobj.sd && pobj.fn) {
-            content = pobj.sd + "/" + pobj.fn; }
-        app.displayDoc(content);
+            displayContent = pobj.sd + "/" + pobj.fn; }
+        app.displayDoc(displayContent);
         initMenu();  //rewrites menu doc html
         localDocLinks();
         setTimeout(app.contact, 4000);
@@ -149,16 +153,16 @@ var app = {},
 
 
     app.toggleMenu = function () {
-        var mc, macc;
-        mc = jt.byId("menucontentdiv");
-        if(mc) {
-            macc = jt.byId("menuaccessdiv");
-            if(mc.style.display === "block") {
-                macc.style.display = "block";
-                mc.style.display = "none"; }
+        var mcont, mico;
+        mcont = jt.byId("menucontentdiv");
+        if(mcont) {
+            mico = jt.byId("menuaccessdiv");
+            if(mcont.style.display === "block") {
+                mico.style.display = "block";
+                mcont.style.display = "none"; }
             else {
-                macc.style.display = "none";
-                mc.style.display = "block"; } }
+                mico.style.display = "none";
+                mcont.style.display = "block"; }}
     };
 
 
