@@ -1,0 +1,43 @@
+/*
+ ************************************************************
+ * HTML tag level settings
+ ************************************************************
+ */
+
+html {
+  min-height: 100%; margin:0; padding:0;
+}
+
+body {
+  padding:0;
+  margin:0;
+  color:#111111;  /* off black */
+  height: 100%;
+}
+
+img { border:0px; }
+
+p { margin:0; padding:0px 0px 8px 0px; }
+
+A:link    { color: #463f67; text-decoration: none; }
+A:visited { color: 463f67; text-decoration: none; }
+A:active  { color: 3399CC; text-decoration: none; }
+A:hover   { color: #3399CC; text-decoration: none; }
+
+/*
+ ************************************************************
+ * General class and id formatting
+ ************************************************************
+ */
+
+#namediv { padding:0px 0px 0px 50px; font-size:xx-large; }
+
+.inlinepicleft { padding:0px 20px 10px 0px; }
+
+.inlinepicright {
+  margin-right: 0;
+  margin-bottom: 20;
+  margin-top: 0;
+  margin-left: 20
+}
+

@@ -1,0 +1,109 @@
+/*
+ ************************************************************
+ * AART specific display settings
+ ************************************************************
+*/
+body { background: #DDCCEE;
+   font-family: "Arial", "Helvetica", sans-serif }
+
+#pagecontentwrap { display:table; margin:auto; 
+  background:url('../img/bamboosidebar.jpg') repeat-y; }
+#pagecontent { margin:0px 0px 0px 70px;
+  background:url('../img/yellowbamboo.jpg') repeat-y; }
+#topdiv { width:770px; margin:5px 5px 5px 30px; 
+  background:url('../img/AARTtoptablebackground.jpg') no-repeat; 
+  border-style:outset; border-color: #FFBB11; border-width:6px; }
+#contentdivwrap { margin:0; min-height:230px; width:850px; }
+#contentdiv { margin:0px 0px 0px 20px;  padding:10px 50px 10px 10px;
+  min-height:600px; }
+
+#menutitlediv { font-size:xx-large; text-align:center; }
+
+.menu5 { font-size:14px; line-height:15px; padding:8px 0px 10px 0px; }
+.menu5 ul { list-style:none; padding:0; margin:0; }
+.menu5 ul li { display:inline-block; width:146px; 
+  vertical-align:top; text-align:center; }
+.menu5 ul li a { text-decoration: none; font-size:12px; font-weight:bold; }
+.menu5 ul li a:link { color: #666600; }
+.menu5 ul li a:visited { color: #666600; }
+.menu5 ul li a:active { color: #666600; }
+.menu5 ul li a:hover { color: #33cc99; }
+
+#backdiv { text-align:right; padding:10px 20px 10px 0px; }
+
+.AARTbulletlist {
+  list-style-image: url('../img/AARTbullet.gif');
+}
+
+.AARTpgtitle { text-align:center; color:#666600; font-style: italic; font-size:large; font-weight:bold; }
+
+/** settings for the return to top link for AART pages--COLORS CHECKED*/
+A.rttAART:link {color: #666600;}
+A.rttAART:visited {color: #666600;}
+A.rttAART:active {color: #CC3333;}
+A.rttAART:hover {color: #CC3333;}
+.rttAART {
+  font-size: 12px;
+  text-decoration: underline; 
+  font-weight: bold;
+  font-style: italic;
+}
+
+/** links for AART main title in top menu for AART--COLORS CHECKED*/
+A.ToptitleAART:link {color: #336666;}
+A.ToptitleAART:visited {color: #336666;}
+A.ToptitleAART:active {color: #33CC99;}
+A.ToptitleAART:hover {color: #33CC99;}
+.ToptitleAART {
+  text-decoration: none; 
+  font-weight:bold; 
+  text-decoration: none;
+  font-size: 30px;
+  font-style: normal;
+}
+
+/** links within submenu for AART subpages--COLORS CHECKED*/
+A.aartmenurefsub:link {color: #666600;}
+A.aartmenurefsub:visited {color: #996666;}
+A.aartmenurefsub:active {color: #CC3333;}
+A.aartmenurefsub:hover {color: CC3333;}
+.aartmenurefsub {
+  font-size: 12px;
+  text-decoration: underline; 
+  font-weight:bold; 
+}
+
+/** links for PDFs in AART pages */
+A.pdfrefAART:link {color: #666600;}
+A.pdfrefAART:visited {color: #996666;}
+A.pdfrefAART:active {color: #CC3333;}
+A.pdfrefAART:hover {color: #CC3333;}
+.pdfrefAART {
+  font-size: 12px;
+  text-decoration: none; 
+  font-weight:bold;
+}
+
+/** settings for the return to KLS main page in AART pages--COLORS CHECKED*/
+A.KLSbacklinkAART:link {color: 336666;}
+A.KLSbacklinkAART:visited {color: #669966;}
+A.KLSbacklinkAART:active {color: #33CC99;}
+A.KLSbacklinkAART:hover {color: 33CC99;}
+.KLSbacklinkAART {
+  font-weight: bold; 
+  text-decoration: none; 
+  font-size: 12px;
+  font-style: italic;
+}
+
+.subheadingAART {
+    text-decoration: none;
+    font-size: 18px;
+    font-style: normal;
+    line-height: 20px;
+    font-weight: bold;
+    word-spacing: normal;
+    text-align: left;
+    color: #666600;
+}
+

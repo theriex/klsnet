@@ -1,0 +1,24 @@
+application: klsgae
+version: 1
+runtime: python27
+api_version: 1
+threadsafe: yes
+
+handlers:
+- url: /favicon\.ico
+  static_files: favicon.ico
+  upload: favicon\.ico
+
+## Trap anything ending with a slash and send it to index.html since
+## there is no default processing to figure that out otherwise.
+- url: (.*)/
+  static_files: docroot/index.html
+  upload: docroot
+
+## Catchall is to look in docroot.
+- url: /
+  static_dir: docroot
+
+libraries:
+- name: webapp2
+  version: "2.5.2"

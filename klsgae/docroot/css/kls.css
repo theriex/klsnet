@@ -1,0 +1,73 @@
+/*
+ ************************************************************
+ * KLS specific display settings
+ ************************************************************
+*/
+body { background: #336666; 
+  background:linear-gradient(#336666, #99cccc);
+  font-family: "Asap", "Arial", "Helvetica", sans-serif; }
+
+
+
+#pagecontentwrap { display:table; margin:auto; 
+  background:url('../img/bamboosidepurple.jpg') repeat-y; }
+#pagecontent { margin:0px 0px 0px 70px;
+  background:url('../img/purplebamboobackground.jpg') repeat-y; }
+#menuspacer { height:15px; }
+#topdiv { width:770px; margin:5px 5px 5px 30px; padding:10px 0px 2px 0px; 
+  background:url('../img/KLStoptablebackground.jpg') no-repeat; 
+  border-style:outset; border-color: #330033; border-width:6px; }
+#contentdivwrap { margin:0; min-height:230px; width:850px; }
+#contentdiv { margin:0px 0px 0px 20px;  padding:10px 50px 10px 10px;
+  min-height:600px; }
+
+.KLSnamelink { font-style:italic; font-weight:bold; }
+.KLSnamelink:link {color: #330033;}
+.KLSnamelink:visited { color: #330033; }
+.KLSnamelink:active { color: #336666; }
+.KLSnamelink:hover { color: #336666; }
+
+#menutitlediv { font-size:xx-large; text-align:center; }
+
+.menu5 { font-size:14px; line-height:15px; padding:8px 0px 10px 0px; }
+.menu5 ul { list-style:none; padding:0; margin:0; }
+.menu5 ul li { display:inline-block; width:146px; 
+  vertical-align:top; text-align:center; }
+.menu5 ul li a { text-decoration: none; font-size:12px; font-weight:bold; }
+.menu5 ul li a:link { color: #332e49; }
+.menu5 ul li a:visited { color: #332e49; }
+.menu5 ul li a:active { color: #336666; }
+.menu5 ul li a:hover { color: #336666; }
+
+.KLSpgtitle { text-align:center; color:#332e49; font-size:large; font-weight:bold; }
+
+/** links for PDFs--NEED TO CHECK */
+A.pdfrefmain:link {color: #660099;}
+A.pdfrefmain:visited {color: #9966FF;}
+A.pdfrefmain:active {color: #336666;}
+A.pdfrefmain:hover {color: #336666;}
+.pdfrefmain {
+  font-size: 12px;
+  text-decoration: none; 
+  font-weight:bold; 
+}
+
+/**settings for top line undergrad vs grad in teaching syllabus table*/
+.tableheader{
+    font-style: normal;;
+    font-weight: bold;
+    color: #330033;
+}
+
+.joybulletlist {
+  list-style-image: url('../img/joybullet.gif');
+}
+
+.joybulletarrowlist {
+  list-style-image: url('../img/joybulletarrow.gif');
+}
+
+.antioppression {
+  font-family: "Arial", "sans-serif";
+}
+
