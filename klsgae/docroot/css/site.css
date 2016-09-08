@@ -1,34 +1,81 @@
 /*
  ************************************************************
- * HTML tag level settings
+ * tag level settings
  ************************************************************
  */
 
 html {
-  min-height: 100%; margin:0; padding:0;
+  margin:0px; 
+  padding:0px;
+  min-height:100%; 
 }
 
 body {
   padding:0;
-  margin:0;
+  margin:0px;
+  height:100%;
+  font-family: "Asap", "Arial", "Helvetica", sans-serif;
+  font-size:large;
   color:#111111;  /* off black */
-  height: 100%;
+  background: #336666; 
+  background:linear-gradient(#336666, #99cccc);
 }
 
-img { border:0px; }
+img { border:0px; vertical-align:middle; }
 
 p { margin:0; padding:0px 0px 8px 0px; }
 
 A:link    { color: #463f67; text-decoration: none; }
-A:visited { color: 463f67; text-decoration: none; }
-A:active  { color: 3399CC; text-decoration: none; }
-A:hover   { color: #3399CC; text-decoration: none; }
+A:visited { color: #463f67; text-decoration: none; }
+A:active  { color: #3399CC; text-decoration: none; }
+A:hover   { color: #3399CC; text-decoration: underline; }
+
+h2 { font-size:large; font-weight:bold; }
+
+/*
+ ************************************************************
+ * framing and menu
+ ************************************************************
+ */
+
+#pagecontentwrap { min-height:100vh; max-width:790px; margin:auto;
+  padding:0px 0px 0px 70px;
+  background-image: url('../img/bamboosidepurple.jpg');
+  background-repeat: repeat-y;
+  }
+#pagecontent { 
+  background-image: url('../img/purplebamboobackground.jpg');
+  padding:10px;
+  }
+#contentdiv { height:100%; min-height:100vh; max-width:790px; }
+
+#menudiv { float:left; margin:-10px 0px 0px -80px; min-width:60px;
+  position:relative; z-index:1000;
+  border-top-right-radius:10px;
+  border-bottom-right-radius:10px;
+  background:url('../img/menuback.png'); }
+#menuaccessdiv { padding:0px 5px 0px 0px; }
+#menucontentdiv { position:absolute; top:0px; left:0px;
+  border-top-right-radius:10px;
+  border-bottom-right-radius:10px;
+  background:url('../img/menuback.png');
+ }
+#menucontentdiv ul { list-style:none; padding:0; margin:0; }
+#menucontentdiv ul li { font-weight:bold; font-size:x-large; 
+  padding:10px 3px 0px 5px; font-style:italic; }
+#menucontentdiv ul li ul li { font-size:medium; font-weight:bold; 
+  padding:10px 4px 12px 4px; font-style:normal; }
 
 /*
  ************************************************************
  * General class and id formatting
  ************************************************************
  */
+
+.leftpic { float:left; margin-right:10px; }
+
+.titlediv { text-align:center; color:#332e49; font-size:x-large; 
+  font-weight:bold; padding:0px 0px 10px 0px; }
 
 #namediv { padding:0px 0px 0px 50px; font-size:xx-large; }
 
@@ -41,3 +88,24 @@ A:hover   { color: #3399CC; text-decoration: none; }
   margin-left: 20
 }
 
+.joybulletarrowlist {
+  padding: 10px 0px 0px 15px;
+  list-style-image: url('../img/joybulletarrow.gif');
+}
+
+.cvlinkdiv { padding:0px 0px 50px 0px; }
+
+.rprofdiv { padding:0px 5px 5px 0px; margin-bottom:20px;
+  background:url('../img/blockback.png'); clear:both; min-height:250px; }
+.rppic { max-height:250px; float:left; margin-right:10px; }
+.rnspan { font-weight:bold; }
+.grpicdiv { text-align:center; margin-bottom:10px; }
+.grpicdiv img { width:100%; }
+
+.syllabiheadingslist li { font-weight:bold; font-size:x-large; 
+  padding:0px 0px 10px 0px; }
+.syllabiheadingslist li ul { list-style:none; padding:5px 0px; }
+.syllabiheadingslist li ul li { font-size:large; padding:15px 0px; }
+
+.sitelist { list-style:none; margin:0px; padding:0px; }
+.sitelist li { padding:10px; }
