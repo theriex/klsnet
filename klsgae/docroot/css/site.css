@@ -44,8 +44,8 @@ A:hover   { color: #3399CC; text-decoration: underline; }
   background-image: url('../img/2016sgwebback.jpg');
   padding:10px;
   }
-#contentdiv { height:100%; min-height:100vh; max-width:790px; 
-  font-size:large; }
+#contentdiv { height:100%; min-height:100vh; 
+  max-width:790px; font-size:large; }
 
 #menudiv { float:left; position:fixed; top:0;
   margin:0px 0px 0px -80px; min-width:60px; z-index:1000;
@@ -109,7 +109,8 @@ A:hover   { color: #3399CC; text-decoration: underline; }
 .sitelist { list-style:none; margin:0px; padding:0px; }
 .sitelist li { padding:10px; }
 
-#membicdiv { margin-left:-10px; }
+#membicdiv { position:relative; margin-left:-10px; 
+  height:90vh; min-height:90vh; }
 
 .teamSectionTitleDiv { font-size:x-large; font-weight:bold; 
   margin:0px 0px 10px 0px; text-align:center; }
