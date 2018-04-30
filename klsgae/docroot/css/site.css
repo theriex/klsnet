@@ -22,7 +22,7 @@ body {
 
 img { border:0px; vertical-align:middle; }
 
-p { margin:0; padding:0px 0px 8px 0px; }
+p { margin:0; padding:0px 0px 12px 0px; }
 
 A:link    { color: #463f67; text-decoration: none; }
 A:visited { color: #463f67; text-decoration: none; }
@@ -89,10 +89,13 @@ A:hover   { color: #3399CC; text-decoration: underline; }
   margin-left: 20
 }
 
+.listheadingp { padding-bottom:0px; }
 .joybulletarrowlist {
-  padding: 10px 0px 0px 15px;
+  margin-top:0px;
+  padding: 5px 0px 0px 15px;
   list-style-image: url('../img/joybulletarrow.gif');
 }
+.joybulletarrowlist li { padding:5px 0px; }
 
 .cvlinkdiv { padding:0px 0px 50px 0px; }
 
