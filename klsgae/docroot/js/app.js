@@ -15,21 +15,21 @@ var app = {},
     var addr = 
         ["k", "a", "r", "e", "n", ".", 
          "s", "u", "y", "e", "m", "o", "t", "o"],
-        displayContent = "",
+        displayContent = "";
 
 
     ////////////////////////////////////////
     // local helper functions
     ////////////////////////////////////////
 
-    relativeToAbsolute = function (url) {
+    function relativeToAbsolute (url) {
         var loc = window.location.href;
         loc = loc.slice(0, loc.lastIndexOf("/") + 1);
         return loc + url;
-    },
+    }
 
 
-    modifyContentLinks = function () {
+    function modifyContentLinks () {
         var i, nodes, node, href, html;
         nodes = jt.byId("contentdiv").getElementsByTagName("a");
         for(i = 0; nodes && i < nodes.length; i += 1) {
@@ -42,10 +42,10 @@ var app = {},
                               onclick: jt.fs("window.open('" + href + "')")},
                         node.innerHTML];
                 node.outerHTML = jt.tac2html(html); } }
-    },
+    }
 
 
-    displayDocContent = function (url, html) {
+    function displayDocContent (url, html) {
         var idx;
         if(!html || !html.trim()) {
             html = url + " contains no text"; }
@@ -56,10 +56,10 @@ var app = {},
             html = html.slice(idx + 1, html.indexOf("</body")); }
         jt.out("contentdiv", html);
         modifyContentLinks();
-    },
+    }
 
 
-    attachDocLinkClick = function (node, link) {
+    function attachDocLinkClick (node, link) {
         var pes, src, fname, html;
         pes = link.split("/");
         if(pes.length >= 2) {
@@ -76,10 +76,10 @@ var app = {},
         if(link.indexOf(displayContent) > 0) {
             html = ["span", {cla: "currentContentLinkSpan"}, node.innerHTML];
             node.innerHTML = jt.tac2html(html); }
-    },
+    }
 
 
-    localDocLinks = function () {
+    function localDocLinks () {
         var i, nodes, node, href;
         nodes = document.getElementsByTagName("a");
         for(i = 0; nodes && i < nodes.length; i += 1) {
@@ -88,7 +88,7 @@ var app = {},
             //browser may resolve href relative path to absolute
             if(href && href.indexOf("index.html") < 0) {
                 attachDocLinkClick(node, href); } }
-    };
+    }
 
 
     //Sometimes there's a significant lag loading the fonts, and if
@@ -103,6 +103,23 @@ var app = {},
         fontlink.rel = "stylesheet";
         fontlink.type = "text/css";
         document.getElementsByTagName("head")[0].appendChild(fontlink);
+    }
+
+
+    function makeMenuHeadingClickFunc (href) {
+        var menuid = href.slice(href.lastIndexOf("#") + 1);
+        return function (evt) {
+            jt.evtend(evt);
+            app.selectSubMenu(menuid); };
+    }
+
+
+    function activateSubMenus () {
+        var mcd = jt.byId("menucontentdiv"),
+            ul = mcd.children[1];  //0 is 'x' div...
+        Array.prototype.forEach.call(ul.children, function (li) {
+            var link = li.children[0];
+            jt.on(link, "click", makeMenuHeadingClickFunc(link.href)); });
     }
 
 
@@ -121,7 +138,26 @@ var app = {},
                  "[x]"]];
         html = jt.tac2html(html) + contentdiv.innerHTML;
         contentdiv.innerHTML = html;
+        activateSubMenus();
         contentdiv.style.display = "none";
+    }
+
+
+    function findMenuIdByDisplayedContent () {
+        var menuid = "",
+            fn = displayContent,
+            mul = jt.byId("menucontentdiv").children[1];  //0 is 'x' div
+        if(fn.indexOf("/") >= 0) {
+            fn = fn.slice(fn.lastIndexOf("/") + 1); }
+        Array.prototype.forEach.call(mul.children, function (li) {
+            var id = li.children[0].href,
+                subul = li.children[1].children[0];
+            id = id.slice(id.lastIndexOf("#") + 1);
+            Array.prototype.forEach.call(subul.children, function (sli) {
+                var link = sli.children[0];
+                if(link.href.indexOf(fn) >= 0) {
+                    menuid = id; } }); });
+        return menuid;
     }
 
 
@@ -177,10 +213,24 @@ var app = {},
             if(mcont.style.display === "block") {
                 mico.style.display = "block";
                 mcont.style.display = "none"; }
-            else {
+            else {  //show menu
+                app.selectSubMenu();
                 mico.style.display = "none";
                 mcont.style.display = "block"; }}
     };
 
 
-} () );
+    app.selectSubMenu = function (menuid) {
+        var mul = jt.byId("menucontentdiv").children[1];  //0 is 'x' div
+        menuid = menuid || findMenuIdByDisplayedContent();
+        Array.prototype.forEach.call(mul.children, function (li) {
+            var id = li.children[0].href;
+            id = id.slice(id.lastIndexOf("#") + 1);
+            if(id === menuid) {
+                jt.byId(id + "menudiv").style.display = "block"; }
+            else {
+                jt.byId(id + "menudiv").style.display = "none"; } });
+    };
+
+
+}());

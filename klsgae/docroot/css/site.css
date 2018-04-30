@@ -61,8 +61,10 @@ A:hover   { color: #3399CC; text-decoration: underline; }
 #menucontentdiv ul { list-style:none; padding:0; margin:0; }
 #menucontentdiv ul li { font-weight:bold; font-size:large; 
   padding:10px 3px 2px 5px; font-style:normal; }
-#menucontentdiv ul li ul li { font-size:medium; font-weight:bold; 
-  padding:2px 4px 15px 4px; font-style:italic; }
+#menucontentdiv ul li div { font-size:medium; font-weight:bold; 
+  padding:2px 4px 15px 4px; font-style:italic;
+  border-radius:10px;  background:url('../img/menuback.png'); 
+  }
 .currentContentLinkSpan { color:#3399CC; }
 
 /*
