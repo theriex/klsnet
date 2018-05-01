@@ -29,15 +29,26 @@ var app = {},
     }
 
 
+    function isExternalContentLink (href) {
+        if(!href) {
+            return false; }
+        if(href.indexOf("http") === 0 &&
+           href.indexOf("klsuyemoto.net") < 0 &&
+           href.indexOf(":10080") < 0) {
+            return true; }
+        if(href.endsWith(".pdf")) {
+            return true; }
+        return false;
+    }
+
+
     function modifyContentLinks () {
         var i, nodes, node, href, html;
         nodes = jt.byId("contentdiv").getElementsByTagName("a");
         for(i = 0; nodes && i < nodes.length; i += 1) {
             node = nodes[i];
             href = node.href;
-            if(href && href.indexOf("http") === 0 &&
-                       href.indexOf("klsuyemoto.net") < 0 &&
-                       href.indexOf(":10080") < 0) {
+            if(isExternalContentLink(href)) {
                 html = ["a", {href: href,
                               onclick: jt.fs("window.open('" + href + "')")},
                         node.innerHTML];
