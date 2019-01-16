@@ -29,6 +29,8 @@ A:visited { color: #463f67; text-decoration: none; }
 A:active  { color: #3399CC; text-decoration: none; }
 A:hover   { color: #3399CC; text-decoration: underline; }
 
+h1 { text-align:center; }
+
 /*
  ************************************************************
  * framing and menu
