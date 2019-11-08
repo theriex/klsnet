@@ -107,6 +107,9 @@ h1 { text-align:center; }
 .rnspan { font-weight:bold; }
 .grpicdiv { text-align:center; margin-bottom:10px; }
 .grpicdiv img { width:100%; }
+.rpsubh { font-size:medium; }
+.rpsubh span { font-size:small; font-weight:bold; }
+.rprofcontdiv { margin-top:5px; }
 
 .syllabiheadingslist li { font-weight:bold; font-size:x-large; 
   padding:0px 0px 10px 0px; }
