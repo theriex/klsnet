@@ -129,3 +129,4 @@ h1 { text-align:center; }
   /* chrome doesn't bold the font well, so italicize also */
   margin:5px 0px 10px 0px; font-style:italic; }
 
+#biotitlediv { margin-top:0.8em; }
