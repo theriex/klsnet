@@ -98,6 +98,7 @@ h1 { text-align:center; }
   list-style-image: url('../img/joybulletarrow.gif');
 }
 .joybulletarrowlist li { padding:5px 0px; }
+.joybulletsublist { list-style-image:none; }
 
 .cvlinkdiv { padding:0px 0px 50px 0px; }
 

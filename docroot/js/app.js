@@ -233,14 +233,21 @@ var app = {},
 
     app.selectSubMenu = function (menuid) {
         var mul = jt.byId("menucontentdiv").children[1];  //0 is 'x' div
-        menuid = menuid || findMenuIdByDisplayedContent();
+        var mibdc = findMenuIdByDisplayedContent();
+        menuid = menuid || mibdc;
         Array.prototype.forEach.call(mul.children, function (li) {
             var id = li.children[0].href;
             id = id.slice(id.lastIndexOf("#") + 1);
+            const menudiv = jt.byId(id + "menudiv");
             if(id === menuid) {
-                jt.byId(id + "menudiv").style.display = "block"; }
+                menudiv.style.display = "block";
+                if(menuid !== mibdc) {  //switch display
+                    const subul = menudiv.children[0];
+                    const subli = subul.children[0];
+                    const firstlink = subli.children[0].href;
+                    window.location.href = firstlink; } }
             else {
-                jt.byId(id + "menudiv").style.display = "none"; } });
+                menudiv.style.display = "none"; } });
     };
 
 
