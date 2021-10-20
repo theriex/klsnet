@@ -161,13 +161,17 @@ var app = {},
         if(fn.indexOf("/") >= 0) {
             fn = fn.slice(fn.lastIndexOf("/") + 1); }
         Array.prototype.forEach.call(mul.children, function (li) {
-            var id = li.children[0].href,
-                subul = li.children[1].children[0];
-            id = id.slice(id.lastIndexOf("#") + 1);
-            Array.prototype.forEach.call(subul.children, function (sli) {
-                var link = sli.children[0];
-                if(link.href.indexOf(fn) >= 0) {
-                    menuid = id; } }); });
+            var id = li.children[0].href;
+            if(id.indexOf("#") < 0) { //single link menu item
+                if(id.indexOf(fn) >= 0) {
+                    return id.slice(id.lastIndexOf("=") + 1, -5); } }
+            else {
+                var subul = li.children[1].children[0];
+                id = id.slice(id.lastIndexOf("#") + 1);
+                Array.prototype.forEach.call(subul.children, function (sli) {
+                    var link = sli.children[0];
+                    if(link.href.indexOf(fn) >= 0) {
+                        menuid = id; } }); } });
         return menuid;
     }
 
@@ -235,19 +239,19 @@ var app = {},
         var mul = jt.byId("menucontentdiv").children[1];  //0 is 'x' div
         var mibdc = findMenuIdByDisplayedContent();
         menuid = menuid || mibdc;
+        if(menuid.endsWith(".html")) {
+            app.toggleMenu();
+            return app.displayDoc(menuid); }
         Array.prototype.forEach.call(mul.children, function (li) {
             var id = li.children[0].href;
-            id = id.slice(id.lastIndexOf("#") + 1);
-            const menudiv = jt.byId(id + "menudiv");
-            if(id === menuid) {
-                menudiv.style.display = "block";
-                if(menuid !== mibdc) {  //switch display
-                    const subul = menudiv.children[0];
-                    const subli = subul.children[0];
-                    const firstlink = subli.children[0].href;
-                    window.location.href = firstlink; } }
-            else {
-                menudiv.style.display = "none"; } });
+            var hi = id.lastIndexOf("#");
+            if(hi >= 0) {
+                id = id.slice(hi + 1);
+                const menudiv = jt.byId(id + "menudiv");
+                if(id === menuid) {
+                    menudiv.style.display = "block"; }
+                else {
+                    menudiv.style.display = "none"; } } });
     };
 
 
